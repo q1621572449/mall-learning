@@ -11,5 +11,13 @@
     <modules>
         <module>mall-tiny</module>
     </modules>
+    <dependencies>
+        <dependency>
+            <groupId>com.macro.mall</groupId>
+            <artifactId>mall-tiny</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+            <scope>compile</scope>
+        </dependency>
+    </dependencies>
 
 </project>

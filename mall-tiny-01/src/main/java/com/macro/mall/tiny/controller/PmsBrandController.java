@@ -38,6 +38,7 @@ public class PmsBrandController {
         CommonResult commonResult;
         int count = demoService.createBrand(pmsBrand);
         if (count == 1) {
+            //这里，如果新增没有指定id，但是返回的entity会返回id，已经映射到entity中了。
             commonResult = CommonResult.success(pmsBrand);
             LOGGER.debug("createBrand success:{}", pmsBrand);
         } else {
@@ -49,7 +50,7 @@ public class PmsBrandController {
 
     @RequestMapping(value = "/update/{id}", method = RequestMethod.POST)
     @ResponseBody
-    public CommonResult updateBrand(@PathVariable("id") Long id, @RequestBody PmsBrand pmsBrandDto, BindingResult result) {
+    public CommonResult updateBrand(@PathVariable("id") Long id, @RequestBody PmsBrand pmsBrandDto) {
         CommonResult commonResult;
         int count = demoService.updateBrand(id, pmsBrandDto);
         if (count == 1) {
