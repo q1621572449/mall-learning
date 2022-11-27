@@ -35,7 +35,7 @@ public class JwtTokenUtil {
     private Long expiration;
 
     /**
-     * 根据负责生成JWT的token
+     * 根据负责生成JWT的token，用于根据登录用户信息生成token
      */
     private String generateToken(Map<String, Object> claims) {
         return Jwts.builder()
@@ -69,7 +69,7 @@ public class JwtTokenUtil {
     }
 
     /**
-     * 从token中获取登录用户名
+     * 从token中获取登录用户名，从token中获取登录用户的信息
      */
     public String getUserNameFromToken(String token) {
         String username;
